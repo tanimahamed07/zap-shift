@@ -26,7 +26,7 @@ const Rider = () => {
   const riderRegion = useWatch({ control, name: "region" });
   const handleRiderApplication = (data) => {
     console.log(data);
-    axiosSecure.post("http://localhost:3000/riders", data).then((res) => {
+    axiosSecure.post("/riders", data).then((res) => {
       if (res.data.insertedId) {
         Swal.fire({
           position: "top-end",

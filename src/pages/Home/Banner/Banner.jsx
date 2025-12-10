@@ -14,10 +14,13 @@ const Banner = () => {
           <button className=" btn btn-primary rounded-2xl text-secondary ">
             Track Your Parcel
           </button>
-          <div className="-rotate-130">
+          <button className="btn btn-primary rounded-2xl text-secondary hidden md:inline-block">
+            Track Your Parcel
+          </button>
+          <div className="-rotate-130 hidden md:inline-block">
             <FaArrowAltCircleDown size={40} />
           </div>
-          <button className="ml-3 btn btn-outline border-2 border-gray-200 rounded-xl">
+          <button className="ml-3 btn btn-outline border-2 border-gray-200 rounded-xl hidden md:inline-block">
             Be A Rider
           </button>
         </div>

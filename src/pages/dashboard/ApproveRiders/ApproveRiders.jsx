@@ -61,7 +61,7 @@ console.log(riders)
           </thead>
           <tbody>
             {riders.map((rider, index) => (
-              <tr>
+              <tr key={index}>
                 <th>{index + 1}</th>
                 <td>{rider.name}</td>
                 <td>{rider.email}</td>
@@ -80,27 +80,27 @@ console.log(riders)
                 <td>{rider.workStatus}</td>
 
                 <td>
-                  <button
+                  <span
                     className="btn"
                   >
                     <FaEye></FaEye>
-                  </button>
-                  <button
+                  </span>
+                  <span
                     onClick={() => handleApproval(rider)}
                     className="btn"
                   >
                     <FaUserCheck></FaUserCheck>
-                  </button>
+                  </span>
 
-                  <button
+                  <span
                     onClick={() => handleRejection(rider)}
                     className="btn"
                   >
                     <IoPersonRemove></IoPersonRemove>
-                  </button>
-                  <button className="btn">
+                  </span>
+                  <span className="btn">
                     <FaTrashCan></FaTrashCan>
-                  </button>
+                  </span>
                 </td>
               </tr>
             ))}

@@ -7,7 +7,6 @@ const SocialLogin = () => {
   const { signInGoogle } = useAuth();
   const axiosSecure = useAxiosSecure();
   const navigate = useNavigate();
-  const location = useLocation();
   const handleGoogleSingIn = () => {
     signInGoogle()
       .then((res) => {
@@ -17,12 +16,10 @@ const SocialLogin = () => {
           displayName: res.user.displayName,
           photoURL: res.user.photoURL,
         };
-        axiosSecure.post('/users', userInfo)
-        .then(res => {
-          console.log('user data has been store', res.data)
-          navigate(location.state || "/");
-        })
-
+        axiosSecure.post("/users", userInfo).then((res) => {
+          console.log("user data has been store", res.data);
+          navigate("/");
+        });
       })
       .catch((error) => console.log(error));
   };
